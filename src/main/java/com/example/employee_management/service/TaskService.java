@@ -2,12 +2,13 @@ package com.example.employee_management.service;
 import java.util.List;
 import java.util.Optional;
 
-import org.jspecify.annotations.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.employee_management.entity.Task;
 import com.example.employee_management.repository.TestRepository;
+
+import jakarta.validation.constraints.Null;
 
 @Service
 public class TaskService {
@@ -37,7 +38,7 @@ public class TaskService {
 		}
 	}
 
-	public @Nullable Object updateTask(Long id, Task updateTask) {
+	public @Null Object updateTask(Long id, Task updateTask) {
 		// TODO Auto-generated method stub
 		Task existing = taskRepository.findById(id)
 	            .orElseThrow(() -> new RuntimeException("Task not found"));
