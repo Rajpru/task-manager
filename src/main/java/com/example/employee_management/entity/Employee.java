@@ -13,6 +13,8 @@ public class Employee {
     private String name;
     private String department;
     private String email;
+    private String role;
+    
 	public Long getId() {
 		return id;
 	}
@@ -36,5 +38,11 @@ public class Employee {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
 	}
 }
