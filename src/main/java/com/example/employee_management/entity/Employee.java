@@ -1,5 +1,7 @@
 package com.example.employee_management.entity;
 
+import java.util.Date;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -14,6 +16,12 @@ public class Employee {
     private String department;
     private String email;
     private String role;
+    
+    @Column(name="created_at")
+    private Date createdAt;
+    
+    @Column(name="updated_at")
+    private Date updatedAt;
     
 	public Long getId() {
 		return id;
@@ -44,5 +52,17 @@ public class Employee {
 	}
 	public void setRole(String role) {
 		this.role = role;
+	}
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
 	}
 }

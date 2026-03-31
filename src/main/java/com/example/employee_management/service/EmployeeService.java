@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,6 +29,7 @@ public class EmployeeService {
         emp.setName(dto.getName());
         emp.setEmail(dto.getEmail());
         emp.setRole(dto.getRole());
+        emp.setCreatedAt(new Date());
 
         return repository.save(emp);
     }
@@ -49,6 +52,7 @@ public class EmployeeService {
         emp.setName(dto.getName());
         emp.setEmail(dto.getEmail());
         emp.setRole(dto.getRole());
+        emp.setUpdatedAt(new Date());
 
         return repository.save(emp);
     }
